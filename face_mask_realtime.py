@@ -22,7 +22,7 @@ while True:
         test_image = np.expand_dims(test_image, axis=0)
 
         pred = (model.predict(test_image)[0][0] > 0.5).astype("int32")
-
+        print(pred)
         if pred == 0:
             cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 3)
             cv2.putText(img, 'WARNING', ((x + w) // 2, y + h + 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)

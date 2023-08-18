@@ -8,7 +8,6 @@ model = Sequential()
 model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(150, 150, 3)))
 model.add(MaxPooling2D())
 
-
 model.add(Conv2D(32, (3, 3), activation='relu'))
 model.add(MaxPooling2D())
 
@@ -33,7 +32,7 @@ test_datagen = ImageDataGenerator(rescale=1/255)
 training_set = train_datagen.flow_from_directory('train', target_size=(150, 150), batch_size=16, class_mode='binary')
 test_set = test_datagen.flow_from_directory('test', target_size=(150, 150), batch_size=16, class_mode='binary')
 
-model.saved = model.fit(training_set, epochs=20,  validation_data=test_set)
+model.saved = model.fit(training_set, epochs=10,  validation_data=test_set)
 model.save('model.h5', model.saved)
 
 
