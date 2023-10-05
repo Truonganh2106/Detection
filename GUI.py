@@ -3,7 +3,6 @@ from tkinter import filedialog
 from PIL import Image, ImageTk
 from keras.models import load_model
 import numpy as np
-import os
 
 class MaskPredictionApp:
     def __init__(self, root):
